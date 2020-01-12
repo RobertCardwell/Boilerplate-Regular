@@ -1,0 +1,10 @@
+$desktop-text: rgba(255, 255, 255, 0.50);
+$desktop-background: rgb(131, 18, 146);
+// $phone-icon: "https://gist.githubusercontent.com/RobertCardwell/84562e71dea09d0aa8cf91797b45ad80/raw/bef9d5a71bffe05b4f71ef9d06a4696533562cd6/phone.svg?sanitize=true";
+
+body {
+    color: $desktop-text;
+    background: $desktop-background;
+    // background: $desktop-background url($phone-icon);
+    // background-size: 10%;
+}

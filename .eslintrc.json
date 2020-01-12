@@ -1,0 +1,27 @@
+{
+    "env": {
+      "commonjs": true,
+      "es6": false,
+      "node": true
+    },
+    "extends": [
+      "airbnb-base",
+      "plugin:css-modules/recommended",
+      "eslint:recommended"
+    ],
+    "plugins": [
+      "html",
+      "css-modules"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "rules": {
+      "linebreak-style": ["error", "windows"],
+      "no-unused-vars": "warn"
+    }
+}
