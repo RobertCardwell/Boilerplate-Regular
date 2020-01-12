@@ -1,27 +1,27 @@
-# Boilerplate HTML and CSS project including SASS, Gulp and ESLint
+# Boilerplate HTML & CSS project including SASS, Gulp & ESLint
 
-To install:
+<b>TO INSTALL:</b>
 
-1. Clone the repo to your local, code directory.
+* Clone the repo.
 
-2. Open your editor in the root directory.
+* Open your editor in the project's root directory.
 
-3. Open the package.json file and change the name of the project. 
+* Open the package.json file and change the project name. 
 
-4. Open a terminal in the project's root directory and run:
+* Open a terminal in the project's root directory and run:
 
-    npm i
+        npm i
 
 
-To use:
+<b>TO USE:</b>
 
-1. From the terminal run:
+* From the terminal run:
     
-    gulp watch
+        gulp watch
 
-2. Recreate ./css/styles.css by opening ./sass/styles.scss and saving it. 
+* Recreate ./css/styles.css by opening ./sass/styles.scss and saving it. 
 
 
-Tested with:
+<b>TESTED WITH:</b>
 
 VS Code on Windows 10.
