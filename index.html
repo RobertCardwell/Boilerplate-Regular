@@ -3,15 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <title>PROJECT NAME</title>
+    
+    <!-- <link rel="stylesheet" href="./sass/main.css"> -->
+    
+    <!-- CSS File -->
+    <!-- Note the query string (?cb=|1579120085365) 'cb' stamp (current time in ms) that does
+    cache busting whenever gulp runs during development by any change to the file.
+    In production instead have a file expiry config in the web server.
+    See http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/  -->
+    <link rel="stylesheet" href="./dist/main.css?cb=1579132630119">
 </head>
 <body>
     
-    <h1>Hello!</h1>
+    <h1>Hello World!</h1>
     
-    <!-- Send 'hello world' to browser console -->
-    <script src="./js/script.js"></script>
+    <div class="section-title">
+        Hello World
+    </div>
+    
+    <div class="phone-icon"><i class="fas fa-phone"></i></div>
+    
+    <div class="icons-group">
+        <a class="icons-group-item" href="#"><i class="fa fa-home fa-fw"></i>Home</a>
+        <a class="icons-group-item" href="#"><i class="fa fa-book fa-fw"></i>Library</a>
+        <a class="icons-group-item" href="#"><i class="fa fa-pencil-alt fa-fw"></i>Applications</a>
+        <a class="icons-group-item" href="#"><i class="fa fa-cog fa-fw"></i>Settings</a>
+      </div>
+    
+    <!-- Javascript File -->
+    <script src="./dist/all.js?cb=1579132630119"></script>
     
 </body>
 </html>

@@ -1,0 +1,28 @@
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}    
+
+// every element in the site to inherit above property from html
+*, *:before, *:after {
+    box-sizing: inherit;
+}    
+
+body { // body consists of header, main, footer
+    padding: 20px;
+    color: $desktop-text;
+    background: $desktop-background url($background-pattern);
+    background-size: 5%;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.3;
+}
+
+main {
+    background-color: #ffffff;
+}
+
+.section-title {
+    color: rgba(0,0,0,1);
+    font-size: 4rem;
+    font-weight: bold;
+}

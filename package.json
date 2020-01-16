@@ -1,15 +1,21 @@
 {
-  "name": "start-project",
+  "name": "startproject",
   "version": "1.0.0",
-  "description": "boilerplate",
+  "description": "Gulp and ESLint dependencies for my project boilerplate.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RobertCardwell/StartProject.git"
+  },
   "author": "Robert Cardwell",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
     "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-plugin-css-modules": "^2.11.0",
@@ -18,6 +24,14 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2"
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
   }
 }

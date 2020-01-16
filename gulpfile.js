@@ -1,33 +1,69 @@
-const gulp = require('gulp');
+// Initialize Modules
 
+// Make these vars explicit
+const {
+  src, dest, watch, series, parallel,
+} = require('gulp');
+
+const autoprefixer = require('autoprefixer');
+const browser = require('browser-sync').create();
+const cssnano = require('cssnano');
+const concat = require('gulp-concat');
+const postcss = require('gulp-postcss');
+const replace = require('gulp-replace');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+// const uglifyjs = require('gulp-uglifyjs');
 
-const browserSync = require('browser-sync').create();
+// File path variables
+const files = {
+  scssPath: 'app/scss/**/*.scss',
+  jsPath: 'app/js/**/*.js',
+};
 
-// compile scss into css
-function style() {
-  // 1. where is my scss file
-  return gulp.src('./sass/**/*.scss')
-    // 2. pass that file throught the sass compiler
-    .pipe(sass().on('error', sass.logError)) // logError option makes the console msg more succinct
-    // 3. where do I save the compiled css?
-    .pipe(gulp.dest('./css'))
-    // 4. stream changes to all browsers
-    .pipe(browserSync.stream()); // sends changes to all browsers
+// Sass task
+function scssTask() {
+  return src(files.scssPath)
+    .pipe(sourcemaps.init())
+    .pipe(sass())
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest('dist'))
+    .pipe(browser.stream());
 }
 
-function watch() {
-  browserSync.init({
+// JS task
+function jsTask() {
+  return src(files.jsPath)
+    .pipe(concat('all.js'))
+    .pipe(uglify())
+    .pipe(dest('dist'));
+}
+
+// Cachebusting task
+const cbString = new Date().getTime();
+function cacheBustTask() {
+  return src(['index.html'])
+    // .pipe(replace(/cb=\d+/g, 'cb=' + cbString)) // ignore linter for this
+    .pipe(replace(/cb=\d+/g, `cb=${cbString}`))
+    .pipe(dest('.'));
+}
+
+// Watch task
+function watchTask() {
+  browser.init({
     server: {
       baseDir: './',
     },
   });
-  // to run 'gulp style' automatically:
-  gulp.watch('./sass/**/*.scss', style);
-  // to run 'gulp style' refresh browser, automatically
-  gulp.watch('./**/*.html', style).on('change', browserSync.reload);
-  gulp.watch('./js/**/*.js', style).on('change', browserSync.reload);
+  watch([files.scssPath, files.jsPath],
+    parallel(scssTask, jsTask)).on('change', browser.reload);
 }
 
-exports.style = style;
-exports.watch = watch;
+// Default task
+exports.default = series(
+  parallel(scssTask, jsTask),
+  cacheBustTask,
+  watchTask,
+);
