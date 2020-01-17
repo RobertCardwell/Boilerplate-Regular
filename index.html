@@ -5,18 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROJECT NAME</title>
     
-    <!-- <link rel="stylesheet" href="./sass/main.css"> -->
-    
     <!-- CSS File -->
-    <!-- Note the query string (?cb=|1579120085365) 'cb' stamp (current time in ms) that does
-    cache busting whenever gulp runs during development by any change to the file.
+    <!-- Note the query string (?cb=[some number]) 'cb' stamp (which is the current time in ms)
+    that clears the cache whenever gulp runs during development because that parameter changes.
     In production instead have a file expiry config in the web server.
     See http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/  -->
-    <link rel="stylesheet" href="./dist/main.css?cb=1579132630119">
+    <link rel="stylesheet" href="./dist/main.css?cb=1579250374075">
 </head>
 <body>
-    
-    <h1>Hello World!</h1>
     
     <div class="section-title">
         Hello World
@@ -29,10 +25,10 @@
         <a class="icons-group-item" href="#"><i class="fa fa-book fa-fw"></i>Library</a>
         <a class="icons-group-item" href="#"><i class="fa fa-pencil-alt fa-fw"></i>Applications</a>
         <a class="icons-group-item" href="#"><i class="fa fa-cog fa-fw"></i>Settings</a>
-      </div>
+    </div>
     
     <!-- Javascript File -->
-    <script src="./dist/all.js?cb=1579132630119"></script>
+    <script src="./dist/all.js?cb=1579250374075"></script>
     
 </body>
 </html>

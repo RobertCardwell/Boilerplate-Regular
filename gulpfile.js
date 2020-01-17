@@ -14,12 +14,11 @@ const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
-// const uglifyjs = require('gulp-uglifyjs');
 
 // File path variables
 const files = {
-  scssPath: 'app/scss/**/*.scss',
-  jsPath: 'app/js/**/*.js',
+  scssPath: 'src/scss/**/*.scss',
+  jsPath: 'src/js/**/*.js',
 };
 
 // Sass task
@@ -30,7 +29,7 @@ function scssTask() {
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write('.'))
     .pipe(dest('dist'))
-    .pipe(browser.stream());
+    .pipe(browser.reload({ stream: true }));
 }
 
 // JS task
@@ -38,27 +37,53 @@ function jsTask() {
   return src(files.jsPath)
     .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(dest('dist'));
+    .pipe(dest('dist'))
+    .pipe(browser.reload({ stream: true }));
 }
 
 // Cachebusting task
 const cbString = new Date().getTime();
 function cacheBustTask() {
   return src(['index.html'])
-    // .pipe(replace(/cb=\d+/g, 'cb=' + cbString)) // ignore linter for this
+    // .pipe(replace(/cb=\d+/g, 'cb=' + cbString)) // elint rejects this
     .pipe(replace(/cb=\d+/g, `cb=${cbString}`))
     .pipe(dest('.'));
 }
 
 // Watch task
+// function watchTask() {
+//   browser.init({
+//     server: {
+//       baseDir: './',
+//     },
+//   });
+//   watch([files.scssPath, files.jsPath],
+//     series(
+//       parallel(scssTask, jsTask),
+//       cacheBustTask,
+//     ));
+// }
+
+// The above always results in reloading of pages when
+// any change is made to SCSS or JS files whereas the function
+// below injects SCSS changes (but still reloads for JS changes).
+
 function watchTask() {
   browser.init({
     server: {
       baseDir: './',
     },
   });
-  watch([files.scssPath, files.jsPath],
-    parallel(scssTask, jsTask)).on('change', browser.reload);
+  watch([files.scssPath],
+    series(
+      scssTask,
+      cacheBustTask,
+    ));
+  watch([files.jsPath],
+    series(
+      jsTask,
+      cacheBustTask,
+    ));
 }
 
 // Default task

@@ -17,7 +17,7 @@
 
 * From the terminal run:
     
-        gulp watch
+        gulp
 
 * Recreate ./css/styles.css by opening ./sass/styles.scss and saving it. 
 
