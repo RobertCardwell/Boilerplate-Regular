@@ -10,7 +10,7 @@
     that clears the cache whenever gulp runs during development because that parameter changes.
     In production instead have a file expiry config in the web server.
     See http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/  -->
-    <link rel="stylesheet" href="./dist/main.css?cb=1579250374075">
+    <link rel="stylesheet" href="./dist/main.css?cb=1579261388633">
 </head>
 <body>
     
@@ -27,8 +27,16 @@
         <a class="icons-group-item" href="#"><i class="fa fa-cog fa-fw"></i>Settings</a>
     </div>
     
+    <!-- test of Safari (does not support webp) -->
+    <img src="/src/img/image.webp" onerror="this.onerror=null; this.src='/src/img/image.png'">
+    
+    <!-- More test of autofixer (CSS3 marquee) -->
+    <div class="example1">
+        <h3>Scrolling text... </h3>
+    </div>
+
     <!-- Javascript File -->
-    <script src="./dist/all.js?cb=1579250374075"></script>
+    <script src="./dist/all.js?cb=1579261388633"></script>
     
 </body>
 </html>
