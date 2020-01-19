@@ -1,12 +1,6 @@
-html {
+*, *::before, *::after {
     box-sizing: border-box;
-    font-size: 100%;
-}    
-
-// every element in the site to inherit above property from html
-*, *:before, *:after {
-    box-sizing: inherit;
-}    
+}
 
 body { // body consists of header, main, footer
     padding: 20px;
