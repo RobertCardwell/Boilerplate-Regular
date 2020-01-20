@@ -1,5 +1,5 @@
 {
-  "name": "startproject",
+  "name": "boilerplate-regular",
   "version": "1.0.0",
   "description": "Gulp and ESLint dependencies for my project boilerplate.",
   "main": "index.js",
