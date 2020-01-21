@@ -17,8 +17,10 @@ const uglify = require('gulp-uglify');
 
 // File path variables
 const files = {
-  scssPath: 'src/scss/**/*.scss',
-  jsPath: 'src/js/**/*.js',
+  scssPath: './src/scss/**/*.scss',
+  jsPath: './src/js/**/*.js',
+  htmlPath: './src/pages/**/*.html',
+  indexPath: './index.html',
 };
 
 // Sass task
@@ -41,10 +43,24 @@ function jsTask() {
     .pipe(browser.reload({ stream: true }));
 }
 
+// HTML task
+function htmlTask() {
+  return src(files.htmlPath)
+    .pipe(browser.reload({ stream: true }));
+}
+
+// Index.html task  // This is separate from the HTML task because
+// I can't see how to have one watch task watch the html files in two
+// and only two folders.
+function indexTask() {
+  return src(files.indexPath)
+    .pipe(browser.reload({ stream: true }));
+}
+
 // Cachebusting task
 const cbString = new Date().getTime();
 function cacheBustTask() {
-  return src(['index.html'])
+  return src(['./index.html'])
     // .pipe(replace(/cb=\d+/g, 'cb=' + cbString)) // elint rejects this
     .pipe(replace(/cb=\d+/g, `cb=${cbString}`))
     .pipe(dest('.'));
@@ -84,11 +100,21 @@ function watchTask() {
       jsTask,
       cacheBustTask,
     ));
+  watch([files.htmlPath],
+    series(
+      htmlTask,
+    ));
+  watch([files.indexPath],
+    series(
+      indexTask,
+    ));
 }
 
 // Default task
 exports.default = series(
   parallel(scssTask, jsTask),
+  htmlTask,
+  indexTask,
   cacheBustTask,
   watchTask,
 );
