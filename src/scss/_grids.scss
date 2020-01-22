@@ -1,0 +1,78 @@
+// Basic Example, non-responsive
+
+// .grid-wrapper {
+//     display: grid;
+//     grid-template-columns: 50% 50%;
+//     grid-gap: 20px;
+//     color: $desktop-text;
+// }
+
+// .box {
+    //     background-color: $desktop-text;
+    //     color: $desktop-background;
+    //     border-radius: 5px;
+    //     padding: 20px;
+    //     font-size: 100%;
+    // }
+    
+    // Redefining grid areas with media queries
+    
+body {
+    margin: 20px;
+}
+
+.box a {
+    grid-area: boxa;
+}
+
+.box b {
+    grid-area: boxb;
+}
+
+.box c {
+    grid-area: boxc;
+}
+
+.box d {
+    grid-area: boxd;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 20px;
+    background-color: $desktop-background;
+    color: $desktop-text;
+    grid-template-areas:
+        "boxa"
+        "boxb"
+        "boxc"
+        "boxd"
+}
+
+@media only screen and (min-width: 650px)  {
+    .grid-wrapper {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "boxa   boxb"
+            "boxc   boxd"
+        }
+}
+
+@media only screen and (min-width: 1000px)   {
+    .grid-wrapper {
+        grid-gap: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "boxa  boxb  boxc"
+            "boxd  ....  ...."
+        // max-width: 1300px;
+    }
+}
+  
+.box {
+    background-color: $desktop-background;
+    color: $desktop-text;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 100%; 
+}

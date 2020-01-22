@@ -11,19 +11,26 @@
     In production instead have a file expiry config in the web server.
     See http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/  -->
     <link rel="stylesheet" href="/dist/main.css?cb=1579651640506">
+    <title>The Billion Ways to Display an SVG</title>
+    <style>
+        .rocketContainer {
+        background-color: #FFEB3B;
+        width: 100px;
+        height: 100px;
+
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        }
+    </style>
 </head>
+
 <body>
-    
-    <H1>Home Page</H1>
-    
-    <H2><a href="/src/pages/font-page.html">Font Page</a></H2>
-    <H2><a href="/src/pages/svg-page.html">SVG Page</a></H2>
-    <H2><a href="/src/pages/nested-divs.html">Nested Divs</a></H2>
-    <H2><a href="/src/pages/test.html">Lesson Following Along</a></H2>
- 
- 
-    <!-- Javascript File -->
-    <script src="/dist/all.js?cb=1579651640506"></script>
-    
+    <p><a href="/index.html">Home</a></p>
+
+    <div class="rocketContainer">
+        <img alt="rocket" width=50 src="https://www.kirupa.com/images/rocket.svg" />
+    </div>
+
 </body>
 </html>
