@@ -1,0 +1,50 @@
+// Basic Example, non-responsive
+
+// .grid-wrapper {
+//     display: grid;
+//     grid-template-columns: 50% 50%;
+//     grid-gap: 20px;
+//     color: $desktop-text;
+// }
+
+// .box {
+    //     background-color: $desktop-text;
+    //     color: $desktop-background;
+    //     border-radius: 5px;
+    //     padding: 20px;
+    //     font-size: 100%;
+    // }
+    
+    
+// "Direct Inlining of SVG" page.
+    
+#svg-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 15px;   // Use px because the inherited rem is too big.
+    cursor: pointer;
+    
+    .card {
+        // margin: 0.5rem 1rem 0.5rem 0rem;
+        
+        img, svg {
+            max-width: 100%;    // These two lines to stop img overflowing its
+            max-height: 100%;   // container.
+            //display: block;     // These two lines to center an image in its cell 
+            //margin: auto;       // if it isn't filling it.
+            transition: transform 0.25s;
+            
+            &:hover {
+                transform: scale(1.05);
+            }            
+        }
+        .info {
+            padding: 1rem 2rem;
+            height: 4rem;
+            text-align: center;
+            
+        }
+    }
+}
+
+// End of "Direct Inlining of SVG" page

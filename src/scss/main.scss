@@ -1,16 +1,12 @@
 /* Setup */
 @import 'variables';
 @import 'fonts';
-@import 'icons';
 @import 'reset';
 @import 'mixins';
 @import 'global';
 
-/* Page Sections */
-@import 'header';
-@import 'homepage';
-@import 'sidebar';
-@import 'footer';
-
-/* Misc */
-@import 'grids';
+/* Page Specific */
+@import '_page_font_page';
+@import '_page_svgs';
+@import '_page_icons';
+@import '_page_nested_divs';

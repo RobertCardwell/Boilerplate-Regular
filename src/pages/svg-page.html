@@ -6,42 +6,60 @@
     <link rel="stylesheet" href="/dist/main.css">
     <title>Document</title>
 </head>
-<body>
+<body>    
     <p><a href="/index.html">Home</a></p>
-        
-    <H2>Direct Inlining of SVG</H2>
-    
+
+    <H1>Direct Inlining of SVG</H1>
     <p>Refresh the page and note that the text in the first image might "flash" and show Times New Roman font for a second while that in the second image does not.</p>
+    <p>Note also that in order for the SVG to resize to fill its container then in the SVG file you must have, say, viewBox="0 0 300 200" (if the proportions are width=300 and height=200) and no explicit values set for width and height.</p>
     
-<div class="grid-wrapper">
-    <div class="box a">
-        <H3>Non-Embedded Roboto Font</H3>
-        <svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" width="300" height="200"><path fill="#3686be" d="M0 0h300v200H0z"/>
-            <style>
-                @import url("https://fonts.googleapis.com/css?family=Roboto:400");
-            </style>
-            <circle cx="150" cy="100" r="80" fill="#fff"/>
-            <text x="150" y="115" font-size="35" text-anchor="middle" fill="#3a3a3a" font-family="Roboto">My SVG</text>
-        </svg>
-    </div>
-
-    <div class="box b">
-        <H3>Embedded Roboto Font in Inline SVG</H3>
-        <svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" width="300" height="200"><path fill="#3686be" d="M0 0h300v200H0z"/><circle cx="150" cy="100" r="80" fill="#fff"/><text x="150" y="115" font-size="35" text-anchor="middle" fill="#3a3a3a" font-family="Roboto">My SVG</text><defs ><style>@font-face{font-family:"Roboto";src:url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAlAAA4AAAAADKQAAiMSAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABRAAAAFEAAABgdG8S1GNtYXAAAAGYAAAAYgAAAWoGkgWBY3Z0IAAAAfwAAABUAAAAVCuoB51mcGdtAAACUAAAATwAAAG8d/hgq2dhc3AAAAOMAAAADAAAAAwACAATZ2x5ZgAAA5gAAAJ3AAADPLo+3b9oZWFkAAAGEAAAADYAAAA2B4fQQWhoZWEAAAZIAAAAHwAAACQN1gUpaG10eAAABmgAAAAcAAAAHB+VAglsb2NhAAAGhAAAABAAAAAQAhIDMm1heHAAAAaUAAAAHgAAACACFwHkbmFtZQAABrQAAAF5AAACf+9ABZlwb3N0AAAIMAAAABQAAAAg/20Aa3ByZXAAAAhEAAAA+wAAAUmiZvrJeJxjYGE1Y5zAwMrAwDqL1ZiBgVEeQjNfZEhjYmBgAGEIaGBgUBeAMBVAhLu/vzuDA5Bdycbwj4EhjX0WE5DDOB8kx2LFugHIUWBgBgDp0ArBAAAAeJxjYGBgZoBgGQZGBhBIAfIYwXwWBg8gzcfAwcDEwMagwODO4MsQzBDGUPn/P1Achf//8f/9/7f83/h//f9OqDlIgJENXQQTMBNWAgIQkyA2sDAwsBLWwUScwbQGAOo1ExAAAAAqAJ0AgACKAHgA1ABkAE4AWgCHAGAAVgA0AjwAvACyAI4AxAAAABT+YAAUApsAIAMhAAsEOgAUBI0AEAWwABQGGAAVAaYAEQbAAA4G2QAGAAAAAHicXZC9TsMwFIVtEqDlR2JEspBsRYW2ssXOlCGphLoE0sGXgR/RSrQTL4CUAaTIA89ysqVbH6cvgcBNoQIWH59z5U/nGkwP0c5sxfk71fzzDa8nVTu4uzXgWsp0moDfG2xp8L4yCLQcIOgMrm1E0kl3OXZyIJ8exgg7jfrBxNG5BMvt1J8jqxCT2FwnRBcG4QoTNhhHHjD7BswagH//YbCthxLBaWavLIpEIE5IKCVTLDKLRSIUkcHOpqPXl+nxuu2uxk7foLUm5BaxACPn1i5SKJwTzm/w4xd/fc3Z/yD+HfgfSGteZM2kiJRYBZGKlG9IiUFbD3Ob+orKV9zT6KYG+xo9Lwe6OuOldLmdxyxkj3WLlSM7Z91g+UwCkYfLsj5im2y15aFGXNaS3diqxxIxZ71gmZD5AsP6iRkAAQACAAgAAv//AA94nF2RW0gUYRTHz/nm2/Gyujt7cY21ZtkdXQvBy86uZg/5JJIVSQ+hUL2kgSYJXYiyksCXiHoJVoXAMqELQTOD7ypF93ALkh6WSjAikqAoJHU/O+u2ufXyHX4z853zn98BhDsA8l6bAQ7oAAOa2w2oKTNB3d6xBoyAZYETcPcfyCfIz0IRQRGBhcBd7kYrL1MK10ptXQHTXZrLgxp6qOINTGLy15RbhK4KzTNlM5b38/GlNtbAOpe7+HBqNPWUAgGCT+yUDL4NnNBqgeKiXpmISOPQ/2e2g8CRBRuBzUtBwGGjz80CNAqr2oNvy37Qe8UoTtTWoUdHptVgrDRS34So49eVR2J3V1JrjhzsDm0R55+hU6paDojvUnGc7+o6yqvTWdpWF/gx20MIQ6cFlZv/ZpFpopw15Cfwp6XIimFP0Gk61gNYYb9M14ywYnpzYvkVI5Cg0wytP6SU1RiLlusRFUu0aFgLySVeHyfwci1UHo7pXp8eqY+G2b7FOfQk418uTN8euTI6hEdeHhILn+Ji5fL0g5vDY3F2sWVm+N7ciRenB4fO9XX0H+4f7zPfHH8yMDhydvYk/ddGAJ4i3TJstSAv/1/Haq7WLEgEUnrZgNLaeitIooY6u4TXX6fm76Y+vlrl5lJbZodnyFuSvAWgN9PYTtft//cy7IrhTNBpunLUSIq5IcefKtnT/tSaiUl1RmUHJpxqIF2a1D1UzE25/irktChWGVMgGOGlGguGmFTidZO1BlcwFuTJVrFoWGJhiFF63zz6AlP14t30Y/ww2TsWE/eZMtnTfQujzwdwB/Z8nsWg+CZWT/0U72sbseUawG9OfwThAAABAAAAAiMSvakagF8PPPUIGQgAAAAAAMTwES4AAAAA1QFS9AAW/ksGUgXEAAAACQACAAAAAAAAeJxjYGRgYM/5x8PAwPaHQYxBki2IASiCAtgBUUADEAADjABkBvwAqQPJABYB+wAABL8AUAUXABwFcwB6AAAAAABOAJQAlAEAATABnnicY2BkYGBgZ1BnANEMUJKPgYGJgXEPiAkACU8A/wAAeJxdks9qwkAQxr/4r5SKFHropYeFQg8FN1EpgvZiRawgHmLxUijEuEQhZEMSFZ+j79T36QMU+iUuFptldn8z38zsLATANb5g4fjZtCNbqNE7cgkXeDJcZvzZcIX8YriKG7warqGBd8MNPGLDKqtySe8Dn4Yt1PFtuMSsH8Nl1K0rwxXyreEqHqx7wzXcWRPDDbxZaqjjQ7IJ1ploO62WGGsdhEpMIl+KQRgKN5dS4apUJTu1kq5e6ky7KtiGXmKcYl+oJN3oSLRlq9Pt5826R6FpktdZFvdse7/fSy/2/LWSOgnscOOrKFWpPZ0MR7P5qNmWDobQiHFAwucHWCODQBsOWlwCY6qa8RCK3gQRfEjSgJGQp3uqSgtP8VTsteO+YqbL6iUto+VqgC3rPGacK3+8KOpT9tW8LZ9FcpIOuuifJuueVTT/dc6nyfimHn8MG/tiSSoxzaeq6GnmBVRD3uMzEhVzp4xM+cohRphhzr1Z3O/8AvqeboUAAAB4nGNgZgCD/1kMKQyYgB0AKiYB2Hic28CjvYFBm2ETowCTNuMmQUYguV3QykBVWoCBQ5thO6OHtZ6iCJC5nSnCw0IDzGIOcjZRFQOxWOJ8bbQlQSxWMx0lSX4Qi60w1s1IGsRin1geY6UMYnHUpQdYSoFYnCGuZmpgU7jKErzNZEEs7uYUP4g6npubupJtQCxeEQEeTjYQi8/GSF1GEMTidzDRlAXrFQhwhLiKYZMQNzvQAwqutZkSLpvspRiLN8WDiHoQoS/FWLLJH0Tkg4h+ELEeRPwHEfJSjKUgHaUgHaUgHaWb+OVAekHEexAhLwdUFw8i+kHEeRDxH0TYywEV54MIfQWgunwgAQBTHFWSAA==) format("woff"); font-weight:normal;font-style:normal;}</style><style>@import url("https://fonts.googleapis.com/css?family=Roboto:400")</style></defs></svg>
-    </div>
-    
-    <div class="box c">
-        <H3>Embedded Roboto Font in SVG File Referenced in an Img Tag</H3>
-        <img src="/src//img/mysvg.svg" alt="My SVG" title="My SVG">
-    </div>
-    
-    <div class="box d">
-        <H3>SVG Image Hosted on Git (Gist)</H3>
-        <img height="100px" src="https://gist.githubusercontent.com/RobertCardwell/84562e71dea09d0aa8cf91797b45ad80/raw/bef9d5a71bffe05b4f71ef9d06a4696533562cd6/phone.svg?sanitize=true" alt="My SVG" title="My SVG">
-    </div>
-
-
-</div>
+    <div id="svg-wrapper">
+        <div class="card">
+            <div class="info">
+                <strong>Non-Embedded Roboto Font</strong>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" viewBox="0 0 300 200"><path fill="#3686be" d="M0 0h300v200H0z"/>
+                <style>
+                    @import url("https://fonts.googleapis.com/css?family=Roboto:400");
+                </style>
+                <circle cx="150" cy="100" r="80" fill="#fff"/>
+                <text x="150" y="115" font-size="35" text-anchor="middle" fill="#3a3a3a" font-family="Roboto">My SVG</text>
+            </svg>
+        </div>
+        <div class="card">
+            <div class="info">
+                <strong>Embedded Roboto Font in Inline SVG</strong>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" baseProfile="full" viewBox="0 0 300 200"><path fill="#3686be" d="M0 0h300v200H0z"/><circle cx="150" cy="100" r="80" fill="#fff"/><text x="150" y="115" font-size="35" text-anchor="middle" fill="#3a3a3a" font-family="Roboto">My SVG</text><defs ><style>@font-face{font-family:"Roboto";src:url(data:application/font-woff;charset=utf-8;base64,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) format("woff"); font-weight:normal;font-style:normal;}</style><style>@import url("https://fonts.googleapis.com/css?family=Roboto:400")</style></defs></svg>
+        </div>
+        <div class="card">
+            <div class="info">
+                <strong>Embedded Roboto Font in SVG File</strong>
+            </div>
+            <img src="/src/img/mysvg.svg" alt="My SVG" title="My SVG">
+        </div>
+        <div class="card">
+            <div class="info">
+                <strong>SVG Image Hosted on Git (Gist)</strong>
+            </div>
+            <img src="https://gist.githubusercontent.com/RobertCardwell/84562e71dea09d0aa8cf91797b45ad80/raw/bef9d5a71bffe05b4f71ef9d06a4696533562cd6/phone.svg?sanitize=true" alt="My SVG" title="My SVG">
+        </div>
+        <div class="card">
+            <div class="info">
+                <strong>My Title</strong>
+            </div>
+            <img src="https://live.staticflickr.com/2387/1726578675_62f09cb233_z.jpg">
+        </div>
+        <div class="card">
+            <div class="info">
+                <strong>My Title</strong>
+                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, asperiores quae, voluptate itaque maiores animi in inventore pariatur minus enim deleniti neque est illum quisquam voluptatum assumenda quam incidunt maxime!
+                </p> -->
+            </div>
+            <img src="https://s0.geograph.org.uk/geophotos/04/31/24/4312454_79d0a1d8.jpg">
+        </div>
+                
+    </div> <!-- svg-wrapper -->
     
 </body>
 </html>
