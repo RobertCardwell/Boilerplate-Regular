@@ -24,7 +24,7 @@ body {  // body consists of header, main, footer
 }
 
 H1, H2, H3 {
-    margin: 0;
+    margin-bottom: 0;
 }
 
 .info {
@@ -32,13 +32,35 @@ H1, H2, H3 {
 }
 
 .media-break {
-    @media screen and (max-width: 800px) and (orientation: portrait) {
+    @include phones {
         display: table;
     }
 }
 
-._bullet {
+.bullet {
     color: green;
     font-size: 80%;
     padding-right: 1rem;   
+}
+
+.outer-wrapper {
+// fills the screen and positions the enclosed div
+    @include phones {
+        text-align: center;
+    }    
+}
+
+.shadowed-shrink-wrapper {
+    display: inline-block; // makes this div fit an inner div
+    box-shadow: 10px 10px 24px 0 rgba(0,0,0,0.5);
+}
+
+.outer-wrapper {  // fills the screen and positions the enclosed, shadowed div
+    @include phones {
+        text-align: center;
+    }    
+}
+
+.shadowed-wrapper {  // applies shadow to a div
+    box-shadow: 10px 10px 24px 0 rgba(0,0,0,0.5);
 }
