@@ -6,8 +6,8 @@
 @import 'global';
 
 /* Page Specific */
-@import '_page_home_page';
-@import '_page_font_page';
-@import '_page_svgs';
-@import '_page_icons';
-@import '_page_nested_divs';
+@import 'homepage';
+@import 'page_font_page';
+@import 'page_svgs';
+@import 'page_icons';
+@import 'page_nested_divs';
