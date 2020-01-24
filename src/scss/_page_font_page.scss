@@ -1,12 +1,13 @@
 #fonts-wrapper {
     min-width: 300px;
     max-width: 600px;
-    border-top: 1px solid;
-    border-left: 1px solid;
     margin: 2rem auto;
-
+    
     .cell {
         padding: 1rem;
+        margin-bottom: 1rem; 
+        border-top: 1px solid;
+        border-left: 1px solid;
         border-right: 1px solid;
         border-bottom: 1px solid;
         background-color: #fff2cf;

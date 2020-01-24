@@ -13,17 +13,32 @@ body, html {
 
 body {  // body consists of header, main, footer
     margin: 1rem;
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
     line-height: 1.5;
+    font-size: 16px;
+    margin-bottom: 1.5rem;
     color: $desktop-text;
     // background: $desktop-background url($background-pattern);
     // background-size: 4%;
     background: $desktop-background;    // color only, no pattern
 }
 
-H1, H2, H3 {    // To avoid ragged-looking left-alignment when text is wrapped.
+H1, H2, H3 {
+    margin: 0;
+}
+
+.info {
+    text-align: left;
+}
+
+.media-break {
     @media screen and (max-width: 800px) and (orientation: portrait) {
-        text-align: center;
+        display: table;
     }
-    margin:0;
+}
+
+._bullet {
+    color: green;
+    font-size: 80%;
+    padding-right: 1rem;   
 }
