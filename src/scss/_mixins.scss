@@ -13,16 +13,33 @@
     }
 */ 
 
-@mixin lrm {
-    @media screen and (max-width: 1350px) { @content; }
+$lrm:       1350px; 
+$tablets:   1100px;
+$phones:    720px;
+
+@mixin lrm {  // low resolution monitors
+    @media screen and (max-width: 1350px){ @content; }
 }
 
-@mixin tablets {
-    @media screen and (max-width: 1100px) { @content; }
+@mixin tablets {    // treat tablets and landscape phones the same
+    @media screen and (max-width: $tablets) { @content; }
+    @media screen and (max-width: $phones) and (orientation: landscape) { @content; }
 }
 
 @mixin phones {
     @media screen and (max-width: 720px) and (orientation: portrait) { @content; }
+}
+
+.tablet-break {
+    @include tablets {
+        display: table;
+    }    
+}
+
+.phone-break {
+    @include phones {
+        display: table;
+    }    
 }
 
 /*====================
@@ -61,3 +78,56 @@ $base-font-size: 16px;
         width: 100%;
     }
 }
+
+/*====================
+    Flex
+====================*/
+
+/*  Display an HTML element as a flex element. To use:
+    .row {
+        @include flex;
+    }
+*/
+
+@mixin flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/*  Center multiple divs down the center. To use:
+    .some-div {
+        @include column-center;
+    }
+*/
+
+@mixin column-center() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*========================================
+    Spacers (apply top and bottom padding)
+========================================*/
+/*
+    To use:
+
+    .cta {
+        @include spacer;
+    }
+*/
+
+$spacer-large: 2rem;
+$spacer-medium: 1rem;
+$spacer-small: 0.5rem;
+
+@mixin spacer() {
+    padding: $spacer-large 0;
+    @include tablets {
+      padding: $spacer-medium 0;
+    }
+    @include phones {
+      padding: $spacer-small 0;
+    }
+}
+

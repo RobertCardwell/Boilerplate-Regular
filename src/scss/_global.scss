@@ -23,19 +23,23 @@ body {  // body consists of header, main, footer
     background: $desktop-background;    // color only, no pattern
 }
 
-H1, H2, H3 {
+H1 {
     margin: 0;
-    padding: 0.75rem;
+    padding: 0;
+}
+
+H2 {
+    margin: 0;
+    padding: 1rem 0 0 0;
+}
+
+H3 {
+    margin: 0;
+    padding: 0;    
 }
 
 .info {
     text-align: left;
-}
-
-.media-break {
-    @include phones {
-        display: table;
-    }
 }
 
 .bullet {
@@ -49,8 +53,7 @@ H1, H2, H3 {
     font-size: 2rem;
 }
 
-.outer-wrapper {
-// fills the screen and positions the enclosed div
+.outer-wrapper {  // fills the screen and positions the enclosed div
     @include phones {
         text-align: center;
     }    
