@@ -71,11 +71,17 @@
     background-position: center;
 }
 
-.rocketContainer3 {
+.rocketContainer4 {
     background-color: #FFEB3B;
-    width: 100px;
-    height: 100px;
-    background-size: 50px;
-    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    
+    // display: flex;
+    // align-content: center;
+    // justify-content: center;
+
+    background-size: 100px;
     background-position: center;
+    background-repeat: no-repeat;
+
 }
