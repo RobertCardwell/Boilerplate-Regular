@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT NAME</title>
+    
+    <!-- CSS File -->
+    <!-- Note the query string (?cb=[some number]) 'cb' stamp (which is the current time in ms)
+    that clears the cache whenever gulp runs during development because that parameter changes.
+    In production instead have a file expiry config in the web server.
+    See http://www.stevesouders.com/blog/2008/08/23/revving-filenames-dont-use-querystring/  -->
+    <link rel="stylesheet" href="/dist/main.css?cb=1579651640506">
+    <title>The Billion Ways to Display an SVG</title>
+</head>
+
+<body>
+    <p><a href="/index.html">Home</a></p>
+
+    <p><a href="https://www.kirupa.com/tricks/billion_ways_display_svg.htm">Reference</a></p>
+    
+    <!-- 1. SVG as a Regular Image -->
+
+    <!-- <div class="rocketContainer">
+        <img alt="rocket" width=50 src="https://www.kirupa.com/images/rocket.svg"/>
+    </div> -->
+    
+    
+    <!-- 2. SVGs in CSS -->
+
+    <!-- <div class="rocket"></div> -->
+
+    
+    <!-- 3. SVG files and the Object tag -->
+
+    <!-- <div class="rocketContainer1">
+        <object type="image/svg+xml" 
+                data="https://www.kirupa.com/images/rocket.svg">
+          it's a rocketship!
+        </object>
+    </div>
+     -->
+
+
+     <!-- 4. SVG Inline in HTML -->
+    
+    <!-- <div class="rocketContainer1">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
+        <path fill="#A0041E" d="M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z" />
+        <path fill="#FFAC33"
+        d="M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z" />
+        <circle fill="#FFCC4D" cx="8.999" cy="27" r="4" />
+        <path fill="#55ACEE" d="M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z" />
+        <path
+        d="M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z" />
+        <path fill="#A0041E" d="M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z" />
+    </svg>
+    </div> -->
+
+    
+    <!-- 5. SVG Inline in CSS -->
+    <!-- Use the <a href="https://yoksel.github.io/url-encoder/">URL-Encoder for SVG</a> for the data in the class.-->
+    
+    <!-- <div class="rocket1"></div> -->
+    
+    
+    <!-- 6. SVG as Data URI in HTML -->
+    
+    <!-- <div class="rocketContainer">
+        <img alt="rocket" 
+            width=50
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='%23A0041E' d='M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z'/%3E%3Cpath fill='%23FFAC33' d='M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z'/%3E%3Ccircle fill='%23FFCC4D' cx='8.999' cy='27' r='4'/%3E%3Cpath fill='%2355ACEE' d='M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z'/%3E%3Cpath d='M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z'/%3E%3Cpath fill='%23A0041E' d='M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z'/%3E%3C/svg%3E" />
+    </div> -->
+    
+    
+    <!-- 7. SVGs as base64 Data URIs in HTML -->
+    
+    <!-- <div class="rocketContainer">
+        <img alt="rocket" 
+             width=50 
+             src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0EwMDQxRSIgZD0iTTEgMTdsOC03IDE2IDEgMSAxNi03IDhzLjAwMS01Ljk5OS02LTEyLTEyLTYtMTItNnoiLz48cGF0aCBmaWxsPSIjRkZBQzMzIiBkPSJNLjk3MyAzNXMtLjAzNi03Ljk3OSAyLjk4NS0xMVMxNSAyMS4xODcgMTUgMjEuMTg3IDE0Ljk5OSAyOSAxMS45OTkgMzJjLTMgMy0xMS4wMjYgMy0xMS4wMjYgM3oiLz48Y2lyY2xlIGZpbGw9IiNGRkNDNEQiIGN4PSI4Ljk5OSIgY3k9IjI3IiByPSI0Ii8+PHBhdGggZmlsbD0iIzU1QUNFRSIgZD0iTTM1Ljk5OSAwcy0xMCAwLTIyIDEwYy02IDUtNiAxNC00IDE2czExIDIgMTYtNGMxMC0xMiAxMC0yMiAxMC0yMnoiLz48cGF0aCBkPSJNMjYuOTk5IDVjLTEuNjIzIDAtMy4wMTMuOTcxLTMuNjQxIDIuMzYuNTAyLS4yMjcgMS4wNTUtLjM2IDEuNjQxLS4zNiAyLjIwOSAwIDQgMS43OTEgNCA0IDAgLjU4Ni0uMTMzIDEuMTM5LS4zNTkgMS42NCAxLjM4OS0uNjI3IDIuMzU5LTIuMDE3IDIuMzU5LTMuNjQgMC0yLjIwOS0xLjc5MS00LTQtNHoiLz48cGF0aCBmaWxsPSIjQTAwNDFFIiBkPSJNOCAyOHMwLTQgMS01IDEzLjAwMS0xMC45OTkgMTQtMTAtOS4wMDEgMTMtMTAuMDAxIDE0UzggMjggOCAyOHoiLz48L3N2Zz4=" />
+    </div> -->
+    
+    
+    <!-- 8. SVGs Inline as Base64 in CSS -->
+    
+    <!-- <div class="rocket2"></div> -->
+    
+    
+    <!-- 9. SVGs as base64 Data URIs for an Object in HTML -->
+    
+    <!-- <div class="rocketContainer1">
+        <object type="image/svg+xml" 
+                data="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iI0EwMDQxRSIgZD0iTTEgMTdsOC03IDE2IDEgMSAxNi03IDhzLjAwMS01Ljk5OS02LTEyLTEyLTYtMTItNnoiLz48cGF0aCBmaWxsPSIjRkZBQzMzIiBkPSJNLjk3MyAzNXMtLjAzNi03Ljk3OSAyLjk4NS0xMVMxNSAyMS4xODcgMTUgMjEuMTg3IDE0Ljk5OSAyOSAxMS45OTkgMzJjLTMgMy0xMS4wMjYgMy0xMS4wMjYgM3oiLz48Y2lyY2xlIGZpbGw9IiNGRkNDNEQiIGN4PSI4Ljk5OSIgY3k9IjI3IiByPSI0Ii8+PHBhdGggZmlsbD0iIzU1QUNFRSIgZD0iTTM1Ljk5OSAwcy0xMCAwLTIyIDEwYy02IDUtNiAxNC00IDE2czExIDIgMTYtNGMxMC0xMiAxMC0yMiAxMC0yMnoiLz48cGF0aCBkPSJNMjYuOTk5IDVjLTEuNjIzIDAtMy4wMTMuOTcxLTMuNjQxIDIuMzYuNTAyLS4yMjcgMS4wNTUtLjM2IDEuNjQxLS4zNiAyLjIwOSAwIDQgMS43OTEgNCA0IDAgLjU4Ni0uMTMzIDEuMTM5LS4zNTkgMS42NCAxLjM4OS0uNjI3IDIuMzU5LTIuMDE3IDIuMzU5LTMuNjQgMC0yLjIwOS0xLjc5MS00LTQtNHoiLz48cGF0aCBmaWxsPSIjQTAwNDFFIiBkPSJNOCAyOHMwLTQgMS01IDEzLjAwMS0xMC45OTkgMTQtMTAtOS4wMDEgMTMtMTAuMDAxIDE0UzggMjggOCAyOHoiLz48L3N2Zz4=">
+          it's a rocketship!
+        </object>
+    </div> -->
+    
+
+    <!-- 10. SVG, Image Source, and JavaScript -->
+    
+    <!-- <div class="rocketContainer1"><img/></div>
+        <script>  
+            var imageElement = document.querySelector(".rocketContainer1 img");
+            imageElement.src = "https://www.kirupa.com/images/rocket.svg";
+        </script> -->
+
+        
+    <!-- 11. Alternative Use of SVG, Image Source, and JavaScript -->
+    
+    <!-- <div class="rocketContainer1"></div>
+    <script>  
+      var container = document.querySelector(".rocketContainer1");
+      var imageElement = document.createElement("img");
+      imageElement.src = "https://www.kirupa.com/images/rocket.svg";
+  
+      container.appendChild(imageElement);
+    </script> -->
+
+    
+    <!-- 12. SVGs in CSS via JavaScript (as background image) -->
+    <!-- DOESN'T WORK -->
+    
+    <!-- <div class="rocket3"></div>
+
+    <script>
+        var rocketElement = document.querySelector(".rocket3");
+        rocketElement.style.backgroundImage = `url(https://www.kirupa.com/images/rocket.svg)`;
+    </script> -->
+
+    
+    <!-- 13. Inline SVGs in HTML Specified via JavaScript -->
+    
+    <!-- <div class="rocketContainer1"></div>
+    
+    <script>
+      var rocketSVG = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#A0041E" d="M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z"/><path fill="#FFAC33" d="M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z"/><circle fill="#FFCC4D" cx="8.999" cy="27" r="4"/><path fill="#55ACEE" d="M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z"/><path d="M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z"/><path fill="#A0041E" d="M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z"/></svg>';
+    
+      var container = document.querySelector(".rocketContainer1");
+      container.innerHTML = rocketSVG;
+    </script> -->
+    
+
+    <!-- 14. Specifying an Inline SVG in CSS -->
+    
+    <!-- <div class="rocketContainer1"></div>
+    
+    <script>
+      var rocketSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#A0041E" d="M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z"/><path fill="#FFAC33" d="M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z"/><circle fill="#FFCC4D" cx="8.999" cy="27" r="4"/><path fill="#55ACEE" d="M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z"/><path d="M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z"/><path fill="#A0041E" d="M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z"/></svg>`;
+      var encodedSVG = encodeURIComponent(rocketSVG);
+  
+      var container = document.querySelector(".rocketContainer1");
+      container.style.backgroundImage = `url("data:image/svg+xml,${encodedSVG}")`;
+    </script> -->
+     
+     
+    <!-- 15. JavaScript and a base64 SVG in HTML -->
+    
+    <!-- <div class="rocketContainer1">
+        <img alt="rocket" width=50/>
+    </div>
+      
+    <script>
+        var rocketSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#A0041E" d="M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z"/><path fill="#FFAC33" d="M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z"/><circle fill="#FFCC4D" cx="8.999" cy="27" r="4"/><path fill="#55ACEE" d="M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z"/><path d="M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z"/><path fill="#A0041E" d="M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z"/></svg>`;
+        var base64version = window.btoa(rocketSVG);
+
+        var imgElement = document.querySelector(".rocketContainer1 img");
+        imgElement.src = `data:image/svg+xml;base64,${base64version}`;
+    </script> -->
+     
+    
+    <!-- 16. JavaScript, Base64-encoded SVG, and CSS -->
+    
+    <div class="rocketContainer3"></div>
+    
+    <script>
+      var rocketSVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#A0041E" d="M1 17l8-7 16 1 1 16-7 8s.001-5.999-6-12-12-6-12-6z"/><path fill="#FFAC33" d="M.973 35s-.036-7.979 2.985-11S15 21.187 15 21.187 14.999 29 11.999 32c-3 3-11.026 3-11.026 3z"/><circle fill="#FFCC4D" cx="8.999" cy="27" r="4"/><path fill="#55ACEE" d="M35.999 0s-10 0-22 10c-6 5-6 14-4 16s11 2 16-4c10-12 10-22 10-22z"/><path d="M26.999 5c-1.623 0-3.013.971-3.641 2.36.502-.227 1.055-.36 1.641-.36 2.209 0 4 1.791 4 4 0 .586-.133 1.139-.359 1.64 1.389-.627 2.359-2.017 2.359-3.64 0-2.209-1.791-4-4-4z"/><path fill="#A0041E" d="M8 28s0-4 1-5 13.001-10.999 14-10-9.001 13-10.001 14S8 28 8 28z"/></svg>`;
+      var base64version = window.btoa(rocketSVG);
+  
+      var container = document.querySelector(".rocketContainer3");
+      container.style.backgroundImage = `url(data:image/svg+xml;base64,${base64version})`;
+    </script>
+    
+
+</body>
+</html>

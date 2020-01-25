@@ -39,9 +39,14 @@ H1, H2, H3 {
 }
 
 .bullet {
-    color: green;
+    color: $icon-color;
     font-size: 80%;
     padding-right: 1rem;   
+}
+
+._icon {
+    color: $icon-color;
+    font-size: 2rem;
 }
 
 .outer-wrapper {
