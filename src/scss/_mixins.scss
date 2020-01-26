@@ -21,11 +21,14 @@ $phones:    720px;
     @media screen and (max-width: 1350px){ @content; }
 }
 
-@mixin tablets {    // treat tablets and landscape phones the same
+// Treat tablets and landscape phones the same.
+// Content will also be applied to portrait phones. 
+@mixin tablets {
     @media screen and (max-width: $tablets) { @content; }
     @media screen and (max-width: $phones) and (orientation: landscape) { @content; }
 }
 
+// Content will only be applied top portrait phones.
 @mixin phones {
     @media screen and (max-width: 720px) and (orientation: portrait) { @content; }
 }

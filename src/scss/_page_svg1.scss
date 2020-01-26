@@ -1,47 +1,45 @@
-// Basic Example, non-responsive
-
-// .grid-wrapper {
-//     display: grid;
-//     grid-template-columns: 50% 50%;
-//     grid-gap: 20px;
-//     color: $desktop-text;
-// }
-
-// .box {
-    //     background-color: $desktop-text;
-    //     color: $desktop-background;
-    //     border-radius: 5px;
-    //     padding: 20px;
-    //     font-size: 100%;
-    // }
-    
-    
 // "Direct Inlining of SVG" page.
-    
-#svg-wrapper {
+
+.svg-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 15px;   // Use px because the inherited rem is too big.
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-gap: 1rem;
     cursor: pointer;
-    
+    margin-bottom: 1rem;
+
     .card {
-        // margin: 0.5rem 1rem 0.5rem 0rem;
+        background: $card-color;
         
+        .info {
+            padding: 1rem;
+            text-align: center;
+        }
+    
         img, svg {
-            max-width: 100%;    // These two lines to stop img overflowing its
-            max-height: 100%;   // container.
-            //display: block;     // These two lines to center an image in its cell 
-            //margin: auto;       // if it isn't filling it.
+            width: 100%;
+            
+            // Add this line if you want SVGs and IMGs
+            // to sit exactly on the bottom of the enclosing div
+            // if there are no different-height divs in the same row.         
+            display: block;
+            
+            // Add this line for bottom padding if you want to mask the
+            // fact that some images won't sit on the bottom
+            // of the enclosing div if there are different-height divs 
+            // in the same row, so make them all have some space on
+            // the bottom.
+            // padding-bottom: 1rem;
+            
             transition: transform 0.25s;
             
             &:hover {
                 transform: scale(1.05);
-            }            
+            }
         }
-        .info {
-            padding: 1rem 2rem;
-            text-align: center;
-
+        
+        .desc {
+            color: $desktop-text;
+            margin-bottom: 0;
         }
     }
 }
