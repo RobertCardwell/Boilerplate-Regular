@@ -6,10 +6,10 @@
 @import 'global';
 
 /* Page Specific */
-@import 'homepage';
-@import 'page_font_page';
-@import 'page_icons';
-@import 'page_nested_divs';
-@import 'page_svg1';
-@import 'page_svg2';
-@import 'page_flex';
+@import 'page-specific/homepage';
+@import 'page-specific/font_page';
+@import 'page-specific/icons';
+@import 'page-specific/nested_divs';
+@import 'page-specific/svg1';
+@import 'page-specific/svg2';
+@import 'page-specific/flex';
