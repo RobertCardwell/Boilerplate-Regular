@@ -1,0 +1,55 @@
+/*
+NOTE that "inheritance" of properties is way more trouble than it is
+worth because not all properties are inherited. It is much quicker 
+to write out the cases as separate classes. 
+*/
+
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem auto;
+    height: 200px;
+    width: 1200px;    
+    @include lrm {
+        width: 90%;
+    }
+    @include tablets {
+        width: 80%;
+    }
+    @include phones{
+        width: 70%;
+    }        
+    background-color: $mauve;  
+    border: 2px solid $dark-charcoal;
+}
+
+.flex-cell-small {
+    background-color: $burnt-orange;
+    border: 2px solid $dark-charcoal;
+    margin: 1rem 0;
+    max-width: 200px;
+    padding: 0.5rem;
+    // The following line only operates when the empty space is used up.
+    // It is more predictable than using more than one value of flex-grow. 
+    width: 25%; 
+}
+
+.flex-cell-big {
+    background-color: $burnt-orange;
+    border: 2px solid $dark-charcoal;
+    margin: 1rem 0;
+    max-width: 200px;
+    padding: 0.5rem;
+    // The following line only operates when the empty space is used up.
+    // It is more predictable than using more than one value of flex-grow. 
+    width: 50%;
+}
+
+.flex-cell-nospace {
+    background-color: $burnt-orange;
+    border: 2px solid $dark-charcoal;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    // width: auto;  // These two lines have the same effect
+    flex-grow: 1;   //  of expanding to fill the available space.
+}

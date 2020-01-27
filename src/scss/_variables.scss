@@ -1,7 +1,20 @@
-$desktop-text: #444444;                         // "dark charcoal"
-// $desktop-text: rgba(255, 255, 255, 0.50);       // "ghostly white"
-$desktop-background: #fefaf1;                   // "palest wheat"
-// $desktop-background: rgb(131, 18, 146);         // "purple grape"
-$cell-color: #fff2cf;                            // "light wheat"
-$icon-color: #22806f;                           // bluish green
-$card-color: #e8e8e8;                           // very light grey
+// Color Definitions
+
+$bluish-green: #22806f;
+$burnt-orange: #ff8a00;
+$dark-charcoal: #444444;
+$ghostly-white: #ffffff80;
+$light-wheat: #fff2cf;
+$mauve: #ae65b8;
+$palest-wheat: #fefaf1;
+$purple-grape: #831292;
+$very-light-grey: #e8e8e8;
+
+
+// Color Assignments
+
+$desktop-text: $dark-charcoal;
+$desktop-background: $palest-wheat;
+$card-color: $very-light-grey;
+$cell-color: $light-wheat;
+$icon-color: $bluish-green;
