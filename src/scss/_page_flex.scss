@@ -51,5 +51,5 @@ to write out the cases as separate classes.
     margin: 1rem 0;
     padding: 0.5rem;
     // width: auto;  // These two lines have the same effect
-    flex-grow: 1;   //  of expanding to fill the available space.
+    flex: auto;   //  of expanding to fill the available space.
 }
